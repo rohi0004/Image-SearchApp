@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-weight: 700;
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    display: flex;
+    background: #c6e6ca;
+    border-radius: 8px;
+}
+
+form input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+form button {
+    padding: 10px 20px;
+    border: none;
+    background: #ff3929;
+    color: white;
+    font-size: 16px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #d32720;
+}
+
+#search-result-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#search-result {
+    width: 500px;
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 20px 0;
+    position: relative; /* Add relative positioning */
+}
+
+#search-result img {
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute; /* Add absolute positioning */
+    bottom: 10px; /* Position the buttons 10px from the bottom */
+    padding: 0 10px;
+}
+
+#show-more-btn,
+#show-previous-btn {
+    background-color: #ff3929;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#show-more-btn:hover,
+#show-previous-btn:hover {
+    background: #d32720;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    form input {
+        border-radius: 8px 8px 0 0;
+    }
+
+    form button {
+        border-radius: 0 0 8px 8px;
+    }
+
+    h1 {
+        margin: 10px 0;
+        font-size: 24px;
+    }
+
+    #search-result {
+        gap: 10px;
+    }
+
+    .buttons-container {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px; /* Ensure gap between buttons remains consistent */
+        position: static; /* Remove absolute positioning for responsive */
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    form input {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    form button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #show-more-btn,
+    #show-previous-btn {
+        padding: 8px 16px;
+    }
+}
